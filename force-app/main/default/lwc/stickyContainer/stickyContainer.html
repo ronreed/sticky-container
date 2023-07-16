@@ -1,0 +1,16 @@
+<template>
+    <div data-id="container" style={containerStyle} class={containerClass}>
+        <div class="slds-card sticky-card">
+            <slot name="body"></slot>
+        </div>
+    </div>
+
+    <!-- 
+        When container gets fixed we need a dummy empty section that gets
+        set to the same height as the component so that the content below
+        the panel gets pushed down and doesn't get hidden behind it
+    -->
+    <template if:true={isFixed}>
+        <div style={emptyStyle}></div>
+    </template>
+</template>

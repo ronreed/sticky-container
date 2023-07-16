@@ -1,0 +1,19 @@
+
+.sticky-container {
+    transition: translate3d .3s;
+    transition-timing-function: linear;
+}
+
+.fixed {
+    left: 0;
+    right: 0;
+    position: fixed;
+    z-index: 98;
+}
+
+.fixed .sticky-card {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border: none;
+}
+
