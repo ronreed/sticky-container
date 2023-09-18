@@ -12,6 +12,9 @@ export default class StickyContainer extends LightningElement {
     @api
     highlightsPanelCompactViewEnabled = false;
 
+    @api
+    isDisabled = false;
+
     hasRendered = false;
     isFixed = false;
     startingTop;
@@ -74,10 +77,12 @@ export default class StickyContainer extends LightningElement {
     }
 
     onScrollEvent = () => {
-        if (!this._isFixed && this.hasReachedFixedPosition()) {
-            this._isFixed = true;
-        } else if (this._isFixed && this.hasReachedRelativePosition()) {
-            this._isFixed = false;
+        if (!this.isDisabled) {
+            if (!this._isFixed && this.hasReachedFixedPosition()) {
+                this._isFixed = true;
+            } else if (this._isFixed && this.hasReachedRelativePosition()) {
+                this._isFixed = false;
+            }
         }
     };
 
