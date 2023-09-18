@@ -8,7 +8,7 @@
     left: 0;
     right: 0;
     position: fixed;
-    z-index: 98;
+    z-index: 97;
 }
 
 .fixed .sticky-card {
